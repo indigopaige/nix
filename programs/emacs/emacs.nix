@@ -24,6 +24,7 @@ in {
     ligature
     polymode
     org-roam
+    tuareg
     envrc
     magit
     dash
