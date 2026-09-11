@@ -276,10 +276,10 @@
 
 (require 'org-caldav)
 
-(setq org-caldav-url "https://p165-caldav.icloud.com")
+(setq org-caldav-url "https://icloud.com")
 (setq org-caldav-username "indigopaige@icloud.com")
 
-(setq org-caldav-calendar-id "1945596016219455/calendars/Home/")
+(setq org-caldav-calendar-id "calendars/Home/")
 
 (setq org-caldav-inbox "~/org/inbox.org")
 (setq org-caldav-files '("~/org/calendar.org"))
