@@ -337,10 +337,10 @@
 #+begin_src elisp :tangle yes
   (require 'org-caldav)
 
-  (setq org-caldav-url "https://icloud.com")
+  (setq org-caldav-url "https://p165-caldav.icloud.com/19455960162/calendars")
   (setq org-caldav-username "indigopaige@icloud.com")
 
-  (setq org-caldav-calendar-id "calendars/Home/")
+  (setq org-caldav-calendar-id "E54651FE-6681-486D-9B30-3285C2D9C135")
 
   (setq org-caldav-inbox "~/org/inbox.org")
   (setq org-caldav-files '("~/org/calendar.org"))
