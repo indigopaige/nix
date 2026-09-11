@@ -162,7 +162,7 @@
 #+end_src  
 ** org-roam
 #+begin_src elisp :tangle yes
-  (setq org-roam-directory "~/org/roaming")
+  (setq org-roam-directory "~/org/notes")
   (org-roam-db-autosync-mode)
 
   (define-key org-mode-map (kbd "C-c n c") 'org-roam-node-capture)
@@ -331,19 +331,4 @@
 
   (ido-everywhere 1)
   (ido-mode 1)
-#+end_src
-
-* Cal
-#+begin_src elisp :tangle yes
-  (require 'org-caldav)
-
-  (setq org-caldav-url "https://p165-caldav.icloud.com/19455960162/calendars")
-  (setq org-caldav-username "indigopaige@icloud.com")
-
-  (setq org-caldav-calendar-id "E54651FE-6681-486D-9B30-3285C2D9C135")
-
-  (setq org-caldav-inbox "~/org/inbox.org")
-  (setq org-caldav-files '("~/org/calendar.org"))
-  (setq org-caldav-save-directory "~/org/.caldav-saves")
-  (setq org-caldav-sync-direction 'twoway)
 #+end_src
