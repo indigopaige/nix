@@ -15,6 +15,7 @@ in {
     haskell-mode
     org-contrib
     inheritenv
+    org-caldav
     rust-mode
     org-recur
     qml-mode
