@@ -273,3 +273,15 @@
 
 (ido-everywhere 1)
 (ido-mode 1)
+
+(require 'org-caldav)
+
+(setq org-caldav-url "https://p165-caldav.icloud.com")
+(setq org-caldav-username "indigopaige@icloud.com")
+
+(setq org-caldav-calendar-id "1945596016219455/calendars/Home/")
+
+(setq org-caldav-inbox "~/org/inbox.org")
+(setq org-caldav-files '("~/org/calendar.org"))
+(setq org-caldav-save-directory "~/org/.caldav-saves")
+(setq org-caldav-sync-direction 'twoway)
