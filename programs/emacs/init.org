@@ -38,6 +38,14 @@
 #+end_src
 * Binds
 ** Custom
+*** Sync
+#+begin_src elisp :tangle yes
+  (defun sync ()
+    (interactive)
+    (async-shell-command "rclone sync ~/org icloud:org"))
+  
+  (keymap-global-set "C-," 'sync)
+#+end_src
 *** Dotf
 #+begin_src elisp :tangle yes
   (defun pop-next ()

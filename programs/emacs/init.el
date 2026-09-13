@@ -24,6 +24,12 @@
 (menu-bar-mode   -1)
 (tool-bar-mode   -1)
 
+(defun sync ()
+  (interactive)
+  (async-shell-command "rclone sync ~/org icloud:org"))
+
+(keymap-global-set "C-," 'sync)
+
 (defun pop-next ()
   (forward-line 1)
   (let ((nl (thing-at-point 'line)))
