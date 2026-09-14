@@ -10,10 +10,12 @@ Config
           , "-H", "50"
           , "--high"  , "#e78284"
           , "--normal", "#a6d189"
+          , "--template"
+          , "<total>"
           ] 10
 
       , Run Alsa "default" "Master"
-          [ "--template", "<volumestatus>"
+          [ "--template", "<box color=red><volumestatus></box>"
           , "--suffix"  , "True"
           , "--"
           , "--on", ""
