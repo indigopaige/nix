@@ -1,10 +1,12 @@
 module Main where
 
+import XMonad.Hooks.StatusBar.PP
+import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.StatusBar
 import XMonad.Util.EZConfig
 import XMonad
 
-main :: IO ()
-main = xmonad $ def
+conf = def
   { terminal = "wezterm"
   , modMask  = mod4Mask
   , workspaces
@@ -24,3 +26,5 @@ main = xmonad $ def
                  , "3"
                  ]
 
+main :: IO ()
+main = xmonad . xmobarProp $ conf
