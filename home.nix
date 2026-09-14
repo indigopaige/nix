@@ -52,7 +52,7 @@ in {
   };
 
   xsession.windowManager                       = {
-    xmonad = i ./wm/xmonad.nix;
+    xmonad = i ./wm/xmonad/xmonad.nix;
   };
 
   gtk                                          = i ./home/gtk.nix;
