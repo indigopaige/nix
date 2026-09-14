@@ -15,7 +15,7 @@ Config
           ] 10
 
       , Run Alsa "default" "Master"
-          [ "--template", "<hspace=5/><box color=#babbf1 width=2><volumestatus></box>"
+          [ "--template", "<hspace=1/><box type=Full color=#414559 width=10><volumestatus></box>"
           , "--suffix"  , "True"
           , "--"
           , "--on", ""
