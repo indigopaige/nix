@@ -12,9 +12,15 @@ main = xmonad $ def
   `additionalKeysP`
   [ ("M-f", spawn "rofi -show drun")
   , ("M-q", spawn "wezterm")
+  , ("M-c", kill)
+  ]
+  `removeKeysP`
+  [ "M-S-<Return>"
+  , "M-S-c"
   ]
   where
     workspaces = [ "1"
                  , "2"
                  , "3"
                  ]
+
