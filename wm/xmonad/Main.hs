@@ -4,6 +4,7 @@ import XMonad.Hooks.StatusBar.PP
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.StatusBar
 import XMonad.Util.EZConfig
+import XMonad.Wallpaper
 import XMonad
 
 conf = def
@@ -29,4 +30,6 @@ conf = def
                  ]
 
 main :: IO ()
-main = xmonad . xmobarProp $ conf
+main = do
+  setRandomWallpaper ["$HOME/Pictures/Wallpapers"]
+  xmonad . xmobarProp $ conf

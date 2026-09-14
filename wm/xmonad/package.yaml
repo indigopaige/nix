@@ -22,6 +22,7 @@ default-extensions:
         - GADTs
 
 dependencies:
+        - xmonad-wallpaper
         - xmonad-contrib
         - xmonad-extras
         - containers
