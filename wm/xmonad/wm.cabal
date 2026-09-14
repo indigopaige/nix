@@ -1,0 +1,38 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.38.3.
+--
+-- see: https://github.com/sol/hpack
+
+name:           wm
+version:        0.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      WM
+  hs-source-dirs:
+      ./
+  default-extensions:
+      GeneralizedNewtypeDeriving
+      MultiParamTypeClasses
+      ScopedTypeVariables
+      OverloadedStrings
+      TypeApplications
+      FlexibleContexts
+      ConstraintKinds
+      TemplateHaskell
+      KindSignatures
+      NamedFieldPuns
+      TypeOperators
+      DeriveGeneric
+      TypeFamilies
+      LambdaCase
+      RankNTypes
+      DataKinds
+      Arrows
+      GADTs
+  build-depends:
+      base
+    , xmonad
+  default-language: Haskell2010
