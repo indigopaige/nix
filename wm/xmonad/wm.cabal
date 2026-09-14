@@ -10,7 +10,7 @@ build-type:     Simple
 
 library
   exposed-modules:
-      WM
+      Main
   hs-source-dirs:
       ./
   default-extensions:

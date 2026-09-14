@@ -1,5 +1,5 @@
 { pkgs, env, ... }:
 
 {
-  config = ./WM.hs;
+  config = ./Main.hs;
 }
