@@ -1,5 +1,6 @@
 { pkgs, env, ... }:
 
 {
-  config = ./Main.hs;
+  config                 = ./Main.hs;
+  enableContribAndExtras = true;
 }
