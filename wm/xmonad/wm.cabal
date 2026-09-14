@@ -34,5 +34,8 @@ library
       GADTs
   build-depends:
       base
+    , containers
     , xmonad
+    , xmonad-contrib
+    , xmonad-extras
   default-language: Haskell2010

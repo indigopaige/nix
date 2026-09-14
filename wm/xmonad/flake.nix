@@ -13,6 +13,8 @@
           xorg.libXrandr
           xorg.libXScrnSaver
           xorg.libXext
+          zlib
+          alsa-lib
         ];
 
         name = "wm";
