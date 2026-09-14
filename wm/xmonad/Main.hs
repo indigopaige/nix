@@ -11,6 +11,9 @@ conf = def
   , normalBorderColor  = "#303446"
   , modMask            = mod4Mask
   , terminal           = "wezterm"
+  , startupHook        = do
+      spawn "feh --bg-fill --randomize ~/Pictures/Wallpapers/*"
+      pure ()
   , workspaces
   }
   `additionalKeysP`

@@ -45,6 +45,7 @@ in {
     grim
     bash
     vlc
+    feh
   ];
 
   wayland.windowManager                        = {
