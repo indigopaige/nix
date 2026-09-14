@@ -51,8 +51,6 @@ in {
     hyprland = i ./wm/hyprland.nix;
   };
 
-  xsession.enable                              = true;
-
   xsession.windowManager                       = {
     xmonad = i ./wm/xmonad/xmonad.nix;
   };
