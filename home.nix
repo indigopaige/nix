@@ -77,7 +77,7 @@ in {
     hyprlock    = i ./programs/hyprlock.nix;
     vesktop     = i ./programs/vesktop.nix;
     wezterm     = i ./programs/wezterm/wezterm.nix;
-    xmobar      = i ./programs/xmobar.nix;
+    xmobar      = i ./programs/xmobar/xmobar.nix;
     direnv      = i ./programs/direnv.nix;
     emacs       = i ./programs/emacs/emacs.nix;
     rofi        = i ./programs/rofi.nix;
