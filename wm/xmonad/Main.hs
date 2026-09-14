@@ -9,11 +9,9 @@ main = xmonad $ def
   , modMask  = mod4Mask
   , workspaces
   }
-  `remapKeysP`
-  [ ("M-S-<Return>", "M-q")
-  ]
   `additionalKeysP`
-  [ ("M-f", spawn "rofi")
+  [ ("M-f", spawn "rofi -show drun")
+  , ("M-q", spawn "wezterm")
   ]
   where
     workspaces = [ "1"
