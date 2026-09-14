@@ -3,5 +3,5 @@
 {
   config                 = ./Main.hs;
   enableContribAndExtras = true;
-  extraPackages          = x: with x; [ containers ]
+  extraPackages          = x: with x; [ containers ];
 }
