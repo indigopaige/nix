@@ -36,5 +36,5 @@ Config
   , alignSep = "}{"
 
   , template =
-      "%alsa:default:Master% }{ %XMonadLog% | %date% }{ %cpu% | %memory%"
+      "%alsa:default:Master% } %XMonadLog% | %date% { %cpu% | %memory%"
   }
