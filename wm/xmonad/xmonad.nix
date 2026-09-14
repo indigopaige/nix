@@ -1,6 +1,6 @@
 { pkgs, env, ... }:
 
 {
-  config                 = ./xmonad.hs;
+  config                 = ./Main.hs;
   enableContribAndExtras = true;
 }
