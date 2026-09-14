@@ -3,7 +3,7 @@ Config
   , font     = "xft:iosevka-9"
   , bgColor  = "#5f5f5f"
   , fgColor  = "#f8f8f2"
-  , position = TopW L 90
+  , position = BottomW L 100
   , commands = [ Run Cpu
                  [ "-L", "3"
                  , "-H", "50"
