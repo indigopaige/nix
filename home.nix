@@ -79,6 +79,7 @@ in {
     wezterm     = i ./programs/wezterm/wezterm.nix;
     direnv      = i ./programs/direnv.nix;
     emacs       = i ./programs/emacs/emacs.nix;
+    rofi        = i ./program/rofi.nix;
     eza         = i ./programs/eza.nix;
     ssh         = i ./programs/ssh.nix;
     git         = i ./programs/git.nix;

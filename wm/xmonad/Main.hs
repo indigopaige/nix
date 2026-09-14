@@ -13,7 +13,7 @@ main = xmonad $ def
   [ ("M-S-<Return>", "M-q")
   ]
   `additionalKeysP`
-  [ ("M-f", spawn "dmenu")
+  [ ("M-f", spawn "rofi")
   ]
   where
     workspaces = [ "1"
