@@ -7,8 +7,10 @@ import XMonad.Util.EZConfig
 import XMonad
 
 conf = def
-  { terminal = "wezterm"
-  , modMask  = mod4Mask
+  { focusedBorderColor = "#babbf1"
+  , normalBorderColor  = "#303446"
+  , modMask            = mod4Mask
+  , terminal           = "wezterm"
   , workspaces
   }
   `additionalKeysP`
