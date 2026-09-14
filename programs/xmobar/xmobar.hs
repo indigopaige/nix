@@ -1,9 +1,10 @@
 Config
   { overrideRedirect = False
   , font     = "xft:Iosevka:size=20:antialias=true"
+  , border   = NoBorder
   , bgColor  = "#303446"
   , fgColor  = "#c6d0f5"
-  , position = TopSize C 100 32
+  , position = TopSize L 100 40
   , commands =
       [ Run Cpu
           [ "-L", "3"
@@ -15,7 +16,7 @@ Config
           ] 10
 
       , Run Alsa "default" "Master"
-          [ "--template", "<hspace=1/><box type=Full color=#414559 width=10><volumestatus></box>"
+          [ "--template", "<hspace=5/><volumestatus>"
           , "--suffix"  , "True"
           , "--"
           , "--on", ""
@@ -23,13 +24,9 @@ Config
 
       , Run Memory
           [ "--template"
-          , "Mem: <fc=#ca9ee6><usedratio></fc>%"
-          ] 10
+          , "<fc=#ca9ee6><usedratio></fc>%"
 
-      , Run Date
-          "%a %Y-%m-%d <fc=#babbf1>%H:%M</fc>"
-          "date"
-          10
+          ] 10
 
       , Run XMonadLog
       ]
@@ -38,5 +35,5 @@ Config
   , alignSep = "}{"
 
   , template =
-      "%alsa:default:Master% } %XMonadLog% | %date% { %cpu% | %memory%"
+      "%alsa:default:Master% } %XMonadLog% { %cpu%  %memory%"
   }
