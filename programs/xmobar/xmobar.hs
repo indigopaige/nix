@@ -3,7 +3,7 @@ Config
   , font     = "xft:iosevka-9"
   , bgColor  = "#1e1e2e"
   , fgColor  = "#cdd6f4"
-  , position = TopSize C 100 50
+  , position = TopSize C 100 36
   , commands = [ Run Cpu
                  [ "-L", "3"
                  , "-H", "50"
