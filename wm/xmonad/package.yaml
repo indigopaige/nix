@@ -1,0 +1,29 @@
+name: wm
+spec-version: 0.36.0
+
+default-extensions:
+        - GeneralizedNewtypeDeriving
+        - MultiParamTypeClasses
+        - ScopedTypeVariables
+        - OverloadedStrings
+        - TypeApplications
+        - FlexibleContexts
+        - ConstraintKinds
+        - TemplateHaskell
+        - KindSignatures
+        - NamedFieldPuns
+        - TypeOperators
+        - DeriveGeneric
+        - TypeFamilies
+        - LambdaCase
+        - RankNTypes
+        - DataKinds
+        - Arrows
+        - GADTs
+
+dependencies:
+        - xmonad
+        - base
+
+library:
+        source-dirs: .

@@ -51,6 +51,10 @@ in {
     hyprland = i ./wm/hyprland.nix;
   };
 
+  xsession.windowManager                       = {
+    xmonad = i ./wm/xmonad.nix;
+  };
+
   gtk                                          = i ./home/gtk.nix;
 
   services                                     = {
