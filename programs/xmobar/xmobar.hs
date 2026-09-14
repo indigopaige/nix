@@ -24,7 +24,7 @@ Config
 
       , Run Memory
           [ "--template"
-          , "<fc=#ca9ee6><usedratio></fc>%"
+          , "<fc=#ca9ee6><usedratio></fc><hspace=5/>"
 
           ] 10
 
