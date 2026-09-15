@@ -66,6 +66,7 @@ in {
     mpdscribble     = i ./services/mpdscribble.nix;
     hyprpaper       = i ./services/hyprpaper.nix;
     blanket         = i ./services/blanket.nix;
+    dunst           = i ./services/dunst.nix;
     emacs           = i ./services/emacs.nix;
     mpd             = i ./services/mpd.nix;
   };
