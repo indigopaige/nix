@@ -12,7 +12,6 @@ myConfig = def
   { focusedBorderColor = "#babbf1"
   , normalBorderColor  = "#303446"
   , modMask            = mod4Mask
-  , terminal           = "wezterm"
   , startupHook        = do
       spawn "feh --bg-fill --randomize ~/Pictures/Wallpapers/*"
       pure ()
@@ -33,21 +32,23 @@ myConfig = def
                  , "3"
                  ]
 
+
 myXmobarPP :: PP
 myXmobarPP = def
-  { ppSep             = magenta " * "
-  , ppTitleSanitize   = xmobarStrip
-  , ppCurrent         = wrap " " "" . xmobarBorder "Top" "#8be9fd" 2
-  , ppHidden          = white . wrap " " ""
-  , ppHiddenNoWindows = lowWhite . wrap " " ""
-  , ppUrgent          = red . wrap (yellow "!") (yellow "!")
-  , ppOrder           = \[ws, l, _, wins] -> [ws, l, wins]
-  , ppExtras          = [logTitles formatFocused formatUnfocused]
-  }
+    { ppSep             = magenta " • "
+    , ppTitleSanitize   = xmobarStrip
+    , ppCurrent         = wrap " " "" . xmobarBorder "Top" "#8be9fd" 2
+    , ppHidden          = white . wrap " " ""
+    , ppHiddenNoWindows = lowWhite . wrap " " ""
+    , ppUrgent          = red . wrap (yellow "!") (yellow "!")
+    , ppOrder           = \[ws, l, _, wins] -> [ws, l, wins]
+    , ppExtras          = [logTitles formatFocused formatUnfocused]
+    }
   where
     formatFocused   = wrap (white    "[") (white    "]") . magenta . ppWindow
     formatUnfocused = wrap (lowWhite "[") (lowWhite "]") . blue    . ppWindow
 
+    ppWindow :: String -> String
     ppWindow = xmobarRaw . (\w -> if null w then "untitled" else w) . shorten 30
 
     blue, lowWhite, magenta, red, white, yellow :: String -> String
@@ -58,9 +59,10 @@ myXmobarPP = def
     red      = xmobarColor "#ff5555" ""
     lowWhite = xmobarColor "#bbbbbb" ""
 
+
 main :: IO ()
 main = xmonad
   . ewmhFullscreen
   . ewmh
-  . withEasySB (statusBarProp "xmobar" (pure xmobarPP)) defToggleStrutsKey
+  . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
   $ myConfig
