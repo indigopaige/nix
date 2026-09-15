@@ -48,6 +48,8 @@ myConfig = def
   , manageHook         = myManageHook
   , startupHook        = do
       spawn "feh --bg-fill --randomize ~/Pictures/Wallpapers/*"
+      spawn "thunderbird"
+      spawn "vesktop"
       pure ()
   , workspaces
   }
