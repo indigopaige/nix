@@ -1,6 +1,7 @@
 module Main where
 
 import XMonad.Hooks.StatusBar.PP
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.StatusBar
 import XMonad.Util.EZConfig
@@ -34,9 +35,9 @@ myConfig = def
 
 myXmobarPP :: PP
 myXmobarPP = def
-  { ppSep           = magenta " * "
-  , ppTitleSanitize = xmobarStrip
-  , ppCurrent      = wrap " " "" . xmobarBorder "Top" "#8be9fd" 2
+  { ppSep             = magenta " * "
+  , ppTitleSanitize   = xmobarStrip
+  , ppCurrent         = wrap " " "" . xmobarBorder "Top" "#8be9fd" 2
   , ppHidden          = white . wrap " " ""
   , ppHiddenNoWindows = lowWhite . wrap " " ""
   , ppUrgent          = red . wrap (yellow "!") (yellow "!")
@@ -59,5 +60,7 @@ myXmobarPP = def
 
 main :: IO ()
 main = xmonad
+  . ewmhFullscreen
+  . ewmh
   . withEasySB (statusBarProp "xmobar" (pure xmobarPP)) defToggleStrutsKey
   $ myConfig
