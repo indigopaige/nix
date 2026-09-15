@@ -50,6 +50,7 @@ myConfig = def
       spawn "feh --bg-fill --randomize ~/Pictures/Wallpapers/*"
       spawn "thunderbird"
       spawn "vesktop"
+      spawn "emacs"
       pure ()
   , workspaces
   }
