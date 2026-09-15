@@ -36,9 +36,9 @@ myXmobarPP = def
 
 myManageHook :: ManageHook
 myManageHook = composeAll
-  [ className =? "emacs"   --> doShift "1"
-  , className =? "vesktop" --> doShift "2"
-  , className =? "Mail"    --> doShift "3"
+  [ className =? "Emacs"       --> doShift "1"
+  , className =? "vesktop"     --> doShift "2"
+  , className =? "thunderbird" --> doShift "3"
   ]
 
 myConfig = def
