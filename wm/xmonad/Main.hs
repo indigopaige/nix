@@ -35,7 +35,7 @@ myConfig = def
 
 myXmobarPP :: PP
 myXmobarPP = def
-    { ppSep             = magenta " • "
+    { ppSep             = magenta " ★ "
     , ppTitleSanitize   = xmobarStrip
     , ppCurrent         = wrap " " "" . xmobarBorder "Top" "#8be9fd" 2
     , ppHidden          = white . wrap " " ""
@@ -52,12 +52,12 @@ myXmobarPP = def
     ppWindow = xmobarRaw . (\w -> if null w then "untitled" else w) . shorten 30
 
     blue, lowWhite, magenta, red, white, yellow :: String -> String
-    magenta  = xmobarColor "#ff79c6" ""
-    blue     = xmobarColor "#bd93f9" ""
-    white    = xmobarColor "#f8f8f2" ""
-    yellow   = xmobarColor "#f1fa8c" ""
-    red      = xmobarColor "#ff5555" ""
-    lowWhite = xmobarColor "#bbbbbb" ""
+    magenta  = xmobarColor "#babbf1" ""
+    blue     = xmobarColor "#8caaee" ""
+    white    = xmobarColor "#c6d0f5" ""
+    yellow   = xmobarColor "#e5c890" ""
+    red      = xmobarColor "#e78284" ""
+    lowWhite = xmobarColor "#a5adce" ""
 
 
 main :: IO ()
