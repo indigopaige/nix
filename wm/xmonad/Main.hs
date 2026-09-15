@@ -8,6 +8,8 @@ import XMonad.Util.EZConfig
 import XMonad.Util.Loggers
 import XMonad
 
+type MyLayout = Choose Tall (Choose (Mirror Tall) Full)
+
 myXmobarPP :: PP
 myXmobarPP = def
     { ppSep             = magenta " ★ "
@@ -36,42 +38,54 @@ myXmobarPP = def
 
 myManageHook :: ManageHook
 myManageHook = composeAll
-  [ className =? "Emacs"       --> doShift "1"
-  , className =? "vesktop"     --> doShift "2"
-  , className =? "thunderbird" --> doShift "3"
+  [ className =? "Emacs"       --> doShift "programming"
+  , className =? "vesktop"     --> doShift "social"
+  , className =? "thunderbird" --> doShift "communication"
   ]
 
+myStartupHook :: X ()
+myStartupHook = do
+  spawn "feh --bg-fill --randomize ~/Pictures/Wallpapers/*"
+  spawn "thunderbird"
+  spawn "vesktop"
+  spawn "emacs"
+
+myWorkspaces :: [WorkspaceId]
+myWorkspaces = [ "communication"
+               , "programming"
+               , "social"
+               ]
+
+myAdditionalKeys :: XConfig MyLayout -> XConfig MyLayout
+myAdditionalKeys = (`additionalKeysP` keys)
+  where
+    keys = [ ("M-f", spawn "rofi -show drun")
+           , ("M-q", spawn "wezterm")
+           , ("M-c", kill)
+           ]
+
+myRemoveKeys :: XConfig MyLayout -> XConfig MyLayout
+myRemoveKeys = (`removeKeysP` keys)
+  where
+    keys = [ "M-S-<Return>"
+           , "M-S-c"
+           ]
+
+myConfig :: XConfig MyLayout
 myConfig = def
   { focusedBorderColor = "#babbf1"
   , normalBorderColor  = "#303446"
   , modMask            = mod4Mask
   , manageHook         = myManageHook
-  , startupHook        = do
-      spawn "feh --bg-fill --randomize ~/Pictures/Wallpapers/*"
-      spawn "thunderbird"
-      spawn "vesktop"
-      spawn "emacs"
-      pure ()
-  , workspaces
+  , startupHook        = myStartupHook
+  , workspaces         = myWorkspaces
   }
-  `additionalKeysP`
-  [ ("M-f", spawn "rofi -show drun")
-  , ("M-q", spawn "wezterm")
-  , ("M-c", kill)
-  ]
-  `removeKeysP`
-  [ "M-S-<Return>"
-  , "M-S-c"
-  ]
-  where
-    workspaces = [ "1"
-                 , "2"
-                 , "3"
-                 ]
 
 main :: IO ()
 main = xmonad
   . ewmhFullscreen
   . ewmh
   . withEasySB (statusBarProp "xmobar" (pure myXmobarPP)) defToggleStrutsKey
+  . myAdditionalKeys
+  . myRemoveKeys
   $ myConfig
