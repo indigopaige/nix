@@ -36,27 +36,7 @@ myXmobarPP = def
     red      = xmobarColor "#e78284" ""
     lowWhite = xmobarColor "#a5adce" ""
 
-myManageHook :: ManageHook
-myManageHook = composeAll
-  [ className =? "Emacs"       --> doShift "programming"
-  , className =? "vesktop"     --> doShift "social"
-  , className =? "thunderbird" --> doShift "communication"
-  ]
-
-myStartupHook :: X ()
-myStartupHook = do
-  spawn "feh --bg-fill --randomize ~/Pictures/Wallpapers/*"
-  spawn "thunderbird"
-  spawn "vesktop"
-  spawn "emacs"
-
-myWorkspaces :: [WorkspaceId]
-myWorkspaces = [ "communication"
-               , "programming"
-               , "social"
-               ]
-
-myAdditionalKeys :: XConfig MyLayout -> XConfig MyLayout
+mlyAdditionalKeys :: XConfig MyLayout -> XConfig MyLayout
 myAdditionalKeys = (`additionalKeysP` keys)
   where
     keys = [ ("M-f", spawn "rofi -show drun")
@@ -80,6 +60,27 @@ myConfig = def
   , startupHook        = myStartupHook
   , workspaces         = myWorkspaces
   }
+
+
+myManageHook :: ManageHook
+myManageHook = composeAll
+  [ className =? "Emacs"       --> doShift "programming"
+  , className =? "vesktop"     --> doShift "social"
+  , className =? "thunderbird" --> doShift "communication"
+  ]
+
+myStartupHook :: X ()
+myStartupHook = do
+  spawn "feh --bg-fill --randomize ~/Pictures/Wallpapers/*"
+  spawn "thunderbird"
+  spawn "vesktop"
+  spawn "emacs"
+
+myWorkspaces :: [WorkspaceId]
+myWorkspaces = [ "communication"
+               , "programming"
+               , "social"
+               ]
 
 main :: IO ()
 main = xmonad

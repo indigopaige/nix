@@ -33,6 +33,7 @@ in {
 
   home.packages                                = with pkgs; [
     nerd-fonts.iosevka
+    prism-launcher
     pavucontrol
     alsa-utils
     overskride
