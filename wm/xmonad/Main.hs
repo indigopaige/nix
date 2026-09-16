@@ -36,7 +36,7 @@ myXmobarPP = def
     red      = xmobarColor "#e78284" ""
     lowWhite = xmobarColor "#a5adce" ""
 
-mlyAdditionalKeys :: XConfig MyLayout -> XConfig MyLayout
+myAdditionalKeys :: XConfig MyLayout -> XConfig MyLayout
 myAdditionalKeys = (`additionalKeysP` keys)
   where
     keys = [ ("M-f", spawn "rofi -show drun")
