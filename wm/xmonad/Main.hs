@@ -77,9 +77,9 @@ myStartupHook = do
   spawn "emacs"
 
 myWorkspaces :: [WorkspaceId]
-myWorkspaces = [ "communication"
-               , "programming"
+myWorkspaces = [ "programming"
                , "social"
+               , "communication"
                ]
 
 main :: IO ()
