@@ -15,8 +15,8 @@ in {
     org-superstar
     haskell-mode
     org-contrib
+    ledger-mode
     inheritenv
-    org-caldav
     rust-mode
     org-recur
     qml-mode
