@@ -39,6 +39,7 @@ in {
     overskride
     iosevka
     ripgrep
+    lutris
     nmgui
     unzip
     slurp
