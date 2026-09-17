@@ -40,6 +40,7 @@ in {
     iosevka
     ripgrep
     zrythm
+    ledger
     lutris
     nmgui
     unzip
