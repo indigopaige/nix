@@ -60,12 +60,7 @@
       (move-end-of-line nil)
       (insert " " nl)))
 
-  (defun dotf ()
-    (interactive) 
-    (join-next))
-
-  (keymap-global-set "C-." 'dotf)
-#+end_src
+  #+end_src
 ** Common
 #+begin_src elisp :tangle yes
   (keymap-global-set "M-p" "C-y")
@@ -113,6 +108,10 @@
   (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
   (global-set-key (kbd "C->") 'mc/mark-next-like-this)
   (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+#+end_src
+** org-auto-tangle
+#+begin_src elisp :tangle yes
+  (add-hook 'org-src-mode-hook 'org-auto-tangle-mode)
 #+end_src
 ** org-superstar
 #+begin_src elisp :tangle yes

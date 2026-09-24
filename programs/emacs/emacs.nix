@@ -11,6 +11,7 @@ in {
     multiple-cursors
     org-super-agenda
     catppuccin-theme
+    org-auto-tangle
     impatient-mode
     org-superstar
     haskell-mode

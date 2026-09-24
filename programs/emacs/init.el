@@ -24,12 +24,6 @@
 (menu-bar-mode   -1)
 (tool-bar-mode   -1)
 
-(defun sync ()
-  (interactive)
-  (async-shell-command "rclone sync ~/org icloud:org"))
-
-(keymap-global-set "C-," 'sync)
-
 (defun pop-next ()
   (forward-line 1)
   (let ((nl (thing-at-point 'line)))
@@ -83,6 +77,8 @@
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+
+(add-hook 'org-src-mode-hook 'org-auto-tangle-mode)
 
 (add-hook 'org-mode-hook (lambda () (org-superstar-mode 1)))
 
