@@ -1,7 +1,9 @@
 { pkgs, ... }:
 
 {
-  package    = pkgs.chromium;
+  package    = pkgs.chromium.override {
+    enableWideVine = true;
+  };
 
   extensions = [
 			{ id = "eimadpbcbfnmbkopoojfekhnkhdbieeh"; } # darkreader
