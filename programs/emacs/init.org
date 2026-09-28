@@ -20,8 +20,8 @@
 ** Theme
 #+begin_src elisp :tangle yes
    (load-theme 'gruber-darker :no-confirm)
-   (setq catppuccin-flavor 'frappe)
-   (catppuccin-reload)
+;;    (setq catppuccin-flavor 'frappe)
+;;   (catppuccin-reload)
 #+end_src
 ** Font
 #+begin_src elisp :tangle yes

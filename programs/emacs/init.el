@@ -12,8 +12,8 @@
 (display-time)
 
 (load-theme 'gruber-darker :no-confirm)
-(setq catppuccin-flavor 'frappe)
-(catppuccin-reload)
+;;    (setq catppuccin-flavor 'frappe)
+;;   (catppuccin-reload)
 
 (add-to-list 'default-frame-alist `(font . "Iosevka-20"))
 
