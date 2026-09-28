@@ -36,7 +36,6 @@
   (menu-bar-mode   -1)
   (tool-bar-mode   -1)
 #+end_src
-* Binds
 ** Custom
 *** Sync
 #+begin_src elisp :tangle yes
