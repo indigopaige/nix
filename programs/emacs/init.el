@@ -11,7 +11,7 @@
       display-time-default-load-average nil)
 (display-time)
 
-(load-theme 'catppuccin :no-confirm)
+(load-theme 'gruber-darker :no-confirm)
 (setq catppuccin-flavor 'frappe)
 (catppuccin-reload)
 
@@ -24,6 +24,12 @@
 (menu-bar-mode   -1)
 (tool-bar-mode   -1)
 
+(defun sync ()
+  (interactive)
+  (async-shell-command "rclone sync ~/org icloud:org"))
+
+(keymap-global-set "C-," 'sync)
+
 (defun pop-next ()
   (forward-line 1)
   (let ((nl (thing-at-point 'line)))
@@ -35,12 +41,6 @@
   (let ((nl (pop-next)))
     (move-end-of-line nil)
     (insert " " nl)))
-
-(defun dotf ()
-  (interactive) 
-  (join-next))
-
-(keymap-global-set "C-." 'dotf)
 
 (keymap-global-set "M-p" "C-y")
 
