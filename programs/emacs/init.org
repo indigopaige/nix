@@ -60,6 +60,11 @@
       (move-end-of-line nil)
       (insert " " nl)))
 
+  (defun dotf ()
+    (interactive) 
+    (join-next))
+
+  (keymap-global-set "C-." 'dotf)
   #+end_src
 ** Common
 #+begin_src elisp :tangle yes

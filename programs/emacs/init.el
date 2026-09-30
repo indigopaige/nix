@@ -42,6 +42,12 @@
     (move-end-of-line nil)
     (insert " " nl)))
 
+(defun dotf ()
+  (interactive) 
+  (join-next))
+
+(keymap-global-set "C-." 'dotf)
+
 (keymap-global-set "M-p" "C-y")
 
 (add-hook 'prog-mode-hook 'rainbow-identifiers-mode)
